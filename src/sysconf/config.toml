@@ -1,0 +1,31 @@
+[sysconf]
+DatacenterId = 0
+ServiceId = 0
+ServicePort = 11111
+FileContentPath = "/home/steven/ContentFiles"
+RedisCacheTimeOut = 10 #S
+LocalCacheMemSize = 100 #M
+LocalCacheFlushThreshold = 10 #M
+LocalCacheTimeOut = 10 #S
+
+[db]
+DBType = "mysql"
+ConnectionString = "cdn_user:cdn123.com@tcp(10.0.193.188:3306)/b2b_cdn?charset=utf8&parseTime=True"
+LogMode = true
+
+#[redis]
+#Protocol="tcp"
+#Address="10.213.42.125:10523"
+#MaxPoolSize=20
+
+[redis-cluster]
+#Addresses=["10.0.71.115:7002"]
+#DEV
+Addresses=["10.0.71.114:7001", "10.0.71.115:7002", "10.0.71.116:7003", "10.0.71.114:7006", "10.0.71.115:7004", "10.0.71.116:7005"]
+#PROD
+#Addresses=["10.0.193.155:7001", "10.0.193.156:7002", "10.0.193.157:7003", "10.0.193.155:7004", "10.0.193.156:7005", "10.0.193.157:7006"]
+ConnTimeout=3000 #ms
+ReadTimeout=3000 #ms
+WriteTimeout=3000 #ms
+KeepAlive=500 #ms
+AliveTime=60000 #ms
